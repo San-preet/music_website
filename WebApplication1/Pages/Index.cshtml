@@ -1,0 +1,77 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Music Video Page</title>
+    <style>
+        body {
+        background-color: #f0f8ff;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        padding: 30px;
+        }
+
+
+        h1 {
+        color: #333;
+        }
+
+
+        /* Animation box */
+        #animateBox {
+        width: 100px;
+        height: 100px;
+        background-color: #ff7f7f;
+        border-radius: 10px;
+        position: relative;
+        margin: 40px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Favorite Song</h1>
+
+
+    <!-- Embedded YouTube Music Video -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+
+
+    <p>Enjoy this song! Below is a small animation made with JavaScript.</p>
+
+
+    <!-- Animation Box -->
+    <div id="animateBox"></div>
+
+
+    <button onclick="startAnimation()">Start Animation</button>
+
+
+    <script>
+        function startAnimation() {
+        const box = document.getElementById("animateBox");
+        let pos = 0;
+        const move = setInterval(frame, 5);
+
+
+        function frame() {
+        if (pos >= 300) {
+        clearInterval(move);
+        } else {
+        pos++;
+        box.style.left = pos + "px";
+        }
+        }
+        }
+    </script>
+</body>
+</html>
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
